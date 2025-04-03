@@ -4,7 +4,6 @@ using UnityEngine;
 public class DefinicionOleada : ScriptableObject
 {
     [System.Serializable]
-
     public class BloqueEnemigos
     {
         public GameObject tipoEnemigos;
