@@ -43,7 +43,7 @@ public class GestorOleadas : MonoBehaviour
                 int rutaAlAzarIdx = Random.Range(0, rutas.Length);
                 //GameObject enemigo = Instantiate(definicionOleada.bloques[i].tipoEnemigos, 
                 //    rutas[rutaAlAzarIdx].routePointArray[0], Quaternion.identity);
-                //enemigo.GetComponent<Enemigo>.
+                //enemigo.GetComponent<Enemigo>().ruta = rutas[rutaAlAzarIdx];
             }
         }
     }
