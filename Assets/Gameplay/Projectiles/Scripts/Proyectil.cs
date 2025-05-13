@@ -1,6 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using System;
 
 public partial class Proyectil : MonoBehaviour
 {
@@ -21,8 +20,8 @@ public partial class Proyectil : MonoBehaviour
     public void Init(Vector3 puntoInicial, Vector3 puntoFinal, float alturaSalto)
     { 
         transform.position = puntoInicial;
-        transform.DOJump(puntoFinal, alturaSalto, 1, 
-            tiempoMovimiento).OnComplete(() => RealizaLaDestruccion());
+        transform.DOJump(puntoFinal, alturaSalto, 1, tiempoMovimiento).
+            OnComplete(() => RealizaLaDestruccion());
 
         //transform.DOJump(puntoFinal, alturaSalto, 1, tiempoMovimiento).SetSpeedBased();
     }
@@ -30,17 +29,39 @@ public partial class Proyectil : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (ColliderEsAfectable(other))
-        { 
+        {
             other.GetComponent<IGolpeable>()?.RecibeDanyo(danyoImpactoDirecto);
+            RealizaLaDestruccion();
+        }
+        else if (!other.CompareTag("Cimiento"))
+        {
             RealizaLaDestruccion();
         }
     }
     void RealizaLaDestruccion()
     {
-        Destroy(gameObject);
-
         DanyaPorDestruccion();
         GeneraSubProyectil();
+        Destroy(this.gameObject);
+    }
+
+
+    private void GeneraSubProyectil()
+    {
+        for (int i = 0; i < subProyectilesAGenerar; i++)
+        {
+            Vector2 posicionAleatoriaXY = Random.insideUnitCircle;
+            Vector3 posicionAleatoria = new Vector3(posicionAleatoriaXY.x, 0f, posicionAleatoriaXY.y);
+
+            posicionAleatoria *= radioSubProyectiles;
+            posicionAleatoria += transform.position;
+
+            Vector3 spawnPoint = new Vector3(posicionAleatoria.x, posicionAleatoria.y + 10, posicionAleatoria.z);
+
+            GameObject newProyectil = Instantiate(prefabSubProyectil);
+            newProyectil.GetComponent<Proyectil>().Init(
+                spawnPoint, posicionAleatoria, alturaSaltoSubProyectil);
+        }
     }
 
     private void DanyaPorDestruccion()
@@ -63,30 +84,18 @@ public partial class Proyectil : MonoBehaviour
         }
     }
 
-    void GeneraSubProyectil()
-    {
-        for (int i = 0; i < subProyectilesAGenerar; i++)
-        {
-            Vector2 randomPositionXY = UnityEngine.Random.insideUnitCircle;
-            Vector3 randomPosition = new Vector3(randomPositionXY.x, 0f, randomPositionXY.y);
-            randomPosition *= radioSubProyectiles;
-            randomPosition += transform.position;
-
-            GameObject newProyectil = Instantiate(prefabSubProyectil);
-            //newProyectil.transform.position = transform.position;
-            prefabSubProyectil.GetComponent<Proyectil>().Init(
-                transform.position, randomPosition, alturaSaltoSubProyectil);
-        }
-    }
-
     private bool ColliderEsAfectable(Collider other)
     {
         bool esAfectable = false;
         foreach (string t in tagsAfectados)
         {
             if (other.CompareTag(t))
-            { 
+            {
                 esAfectable = true;
+            }
+            else
+            {
+                esAfectable = false;
             }
         }
 

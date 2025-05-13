@@ -10,7 +10,59 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 891336704862363655, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
       propertyPath: m_Name
-      value: proyectilBase Variant
+      value: proyectilEnemigo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: radioDanyoArea
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: danyoAreaEnBorde
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: debugAlturaSalto
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: danyoAreaEnOrigen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: danyoImpactoDirecto
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: radioSubProyectiles
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: subProyectilesAGenerar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: alturaSaltoSubProyectil
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: tagsAfectados.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097804187591887991, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: 'tagsAfectados.Array.data[0]'
+      value: Torre
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691739096313132732, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691739096313132732, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691739096313132732, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4691739096313132732, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50,6 +102,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4691739096313132732, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4691739096313132732, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966197427455453097, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

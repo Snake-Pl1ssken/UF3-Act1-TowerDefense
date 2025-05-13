@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e669b0fed81c1441badd07e5e25e687, type: 3}
+  m_Name: DefinicionOleada 2
+  m_EditorClassIdentifier: 
+  bloques:
+  - tipoEnemigos: {fileID: 611522203893361909, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
+    cantidad: 3
+    enemigosPorSegundo: 1
+  - tipoEnemigos: {fileID: 8736959853919180645, guid: 697eaf09b6995ca4497b356c1ae189fd, type: 3}
+    cantidad: 6
+    enemigosPorSegundo: 2

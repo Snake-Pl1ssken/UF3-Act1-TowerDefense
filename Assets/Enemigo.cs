@@ -1,18 +1,25 @@
+using DG.Tweening.Core.Easing;
 using UnityEngine;
 using UnityEngine.Splines;
 
-public class Enemigo : MonoBehaviour
+public class Enemigo : MonoBehaviour, IGolpeable
 {
-    [SerializeField] public SplineContainer ruta;
-    [SerializeField] float velocidad = 5f;
-    [SerializeField] float vida = 1f;
-    
-    [SerializeField] float umbralLlegada = 1f;
+    public SplineContainer ruta;
+    [SerializeField] private float velocidad = 5f;
+    [SerializeField] private float vida = 1f;
+    [SerializeField] private float vidaMaxima = 2f;
+    [SerializeField] private barraDeVida _barraDeVida;
+    [SerializeField] private float umbralLlegada = 1f;
 
     float distanciaEntrePuntos = 5f;
     Vector3[] pathPointsCache;
     Vector3 PosicionSiguiente;
     int indiceSiguientePosicion = 1;
+
+    public void EstablecerRuta(SplineContainer r)
+    {
+        ruta = r;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +36,10 @@ public class Enemigo : MonoBehaviour
 
         transform.position = pathPointsCache[0];
         PosicionSiguiente = pathPointsCache[indiceSiguientePosicion];
+
+        vida = vidaMaxima;
+        _barraDeVida.UpdateBarraDeVida(vida, vidaMaxima);
+        GameManager.Instance.NotificaEnemigoCreado();
     }
 
     // Update is called once per frame
@@ -44,11 +55,30 @@ public class Enemigo : MonoBehaviour
             if (indiceSiguientePosicion == pathPointsCache.Length)
             {
                 Destroy(gameObject);
+                GameManager.Instance.NotificaEnemigoLlegaAlFinal();
             }
             else
             { 
                 PosicionSiguiente = pathPointsCache[indiceSiguientePosicion];
             }
         }
+    }
+    public void RecibeDanyo(float cantidad)
+    {
+        vida -= cantidad;
+
+        if (vida > 0)
+        {
+            _barraDeVida.UpdateBarraDeVida(vida, vidaMaxima);
+        }
+        else
+        { 
+            Destroy(this.gameObject);        
+        }
+    }
+
+    private void OnDestroy() 
+    { 
+        GameManager.Instance.NotificaEnemigoDestruido(); 
     }
 }

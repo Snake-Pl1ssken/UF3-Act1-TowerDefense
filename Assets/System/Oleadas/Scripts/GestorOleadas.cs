@@ -6,45 +6,57 @@ using UnityEngine.UIElements;
 
 public class GestorOleadas : MonoBehaviour
 {
-    [SerializeField] SplineContainer[] rutas;
-    [SerializeField] GuionOleadas guionOleadas;
     [System.Serializable]
     public class LineaGuion
     {
         public float espera;
         public DefinicionOleada oleada;
     }
+
     [System.Serializable]
     public class GuionOleadas
     {
-        [SerializeField] public LineaGuion[] lineas;
+        public LineaGuion[] lineas;
     }
+
+    [SerializeField] GuionOleadas guion;
+    [SerializeField] SplineContainer[] rutas;
 
     private void Start()
     {
         StartCoroutine(LeeGuion());
     }
+
     IEnumerator LeeGuion()
     {
-        for (int i = 0; i < guionOleadas.lineas.Length; i++)
+        // Pasa por todas las LINEAS de GUION
+        for (int i = 0; i < guion.lineas.Length; i++)
         {
-
-            yield return new WaitForSeconds(guionOleadas.lineas[i].espera);
-            StartCoroutine(LanzaOleda(guionOleadas.lineas[i].oleada));
+            StartCoroutine(LanzaOleadas(guion.lineas[i].oleada));
+            yield return new WaitForSeconds(guion.lineas[i].espera);
         }
+
+        GameManager.Instance.NotificaUltimoEnemigoCreado();
     }
-    IEnumerator LanzaOleda(DefinicionOleada definicionOleada)
+
+    IEnumerator LanzaOleadas(DefinicionOleada oleada)
     {
-        for (int i = 0; i < definicionOleada.bloques.Length; i++)
+        // Pasa por todos los BLOQUES de la OLEADA
+        for (int i = 0; i < oleada.bloques.Length; i++)
         {
-            for (int j = 0;  j < definicionOleada.bloques[i].cantidad; j++)
+            // Instancia la CANTIDAD de ENEMIGOS del BLOQUE con su RUTA
+            for (int j = 0; j < oleada.bloques[i].cantidad; j++)
             {
-                yield return new WaitForSeconds(1f / definicionOleada.bloques[i].enemigosPorSegundo);
-                int rutaAlAzarIdx = Random.Range(0, rutas.Length);
-                //GameObject enemigo = Instantiate(definicionOleada.bloques[i].tipoEnemigos, 
-                //    rutas[rutaAlAzarIdx].routePointArray[0], Quaternion.identity);
-                //enemigo.GetComponent<Enemigo>().ruta = rutas[rutaAlAzarIdx];
+                Enemigo enemigo = Instantiate(
+                oleada.bloques[i].tipoEnemigos,
+                Vector3.zero,
+                Quaternion.identity);
+
+                enemigo.EstablecerRuta(rutas[Random.Range(0, rutas.Length)]);
+
+                yield return new WaitForSeconds(oleada.bloques[i].enemigosPorSegundo);
             }
         }
+
     }
 }

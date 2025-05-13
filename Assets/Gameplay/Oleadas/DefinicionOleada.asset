@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: DefinicionOleada
   m_EditorClassIdentifier: 
   bloques:
-  - tipoEnemigos: {fileID: 0}
-    cantidad: 5
-    enemigosPorSegundo: 1
-  - tipoEnemigos: {fileID: 0}
-    cantidad: 2
+  - tipoEnemigos: {fileID: 7194920345565297134, guid: e476e7c1a2259d741b282a787777942e, type: 3}
+    cantidad: 11
     enemigosPorSegundo: 0.25
