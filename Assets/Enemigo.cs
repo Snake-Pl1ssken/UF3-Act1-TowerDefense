@@ -72,7 +72,8 @@ public class Enemigo : MonoBehaviour, IGolpeable
             _barraDeVida.UpdateBarraDeVida(vida, vidaMaxima);
         }
         else
-        { 
+        {
+            GameManager.Instance.NotificaEnemigoDestruido();
             Destroy(this.gameObject);        
         }
     }

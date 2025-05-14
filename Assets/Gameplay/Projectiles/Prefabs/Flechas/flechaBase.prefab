@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 891336704862363655, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
       propertyPath: m_Name
-      value: proyectilBase Variant
+      value: flechaBase
       objectReference: {fileID: 0}
     - target: {fileID: 4691739096313132732, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7050302702094155291, guid: c7fcac4e9146d1649a38b80e0d327a43, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: efbf3022b85ffed4f9268b7c7719624a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

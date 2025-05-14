@@ -20,25 +20,66 @@ public class Cimiento : MonoBehaviour
     Torre torreConstruida;
     GameObject nuevaTorre;
 
-    public void ConstruyeTorreArqueros()
+    string tipoTorre;
+
+    public void ConstruyeTorreArquerosLv(int level)
     {
-        Debug.Log("ContruyeTorreArqueros");
-        nuevaTorre = Instantiate(prefabTorreArqueros, transform.position, transform.rotation);
+        DestruyeTorre();
+
+        if (level == 0)
+            nuevaTorre = Instantiate(prefabTorreArqueros, transform.position, transform.rotation);
+        else if (level == 1)
+            nuevaTorre = Instantiate(prefabTorreArquerosLv1, transform.position, transform.rotation);
+        else
+            nuevaTorre = Instantiate(prefabTorreArquerosLv2, transform.position, transform.rotation);
+
         torreConstruida = nuevaTorre.GetComponent<Torre>();
+        tipoTorre = "TorreArqueros";
     }
 
-    public void ConstruyeTorreMagica()
+    public void ConstruyeTorreMagicaLv(int level)
     {
-        Debug.Log("ContruyeTorreArqueros");
+        DestruyeTorre();
+
+        if (level == 0)
+            nuevaTorre = Instantiate(prefabTorreMagica, transform.position, transform.rotation);
+        else if (level == 1)
+            nuevaTorre = Instantiate(prefabTorreMagicaLv1, transform.position, transform.rotation);
+        else
+            nuevaTorre = Instantiate(prefabTorreMagicaLv2, transform.position, transform.rotation);
+
+        torreConstruida = nuevaTorre.GetComponent<Torre>();
+        tipoTorre = "TorreMagica";
     }
 
-    public void ConstruyeTorreCanyones()
+    public void ConstruyeTorreCanyonesLv(int level)
     {
-        Debug.Log("ContruyeTorreArqueros");
+        DestruyeTorre();
+
+        if (level == 0)
+            nuevaTorre = Instantiate(prefabTorreCanyones, transform.position, transform.rotation);
+        else if (level == 1)
+            nuevaTorre = Instantiate(prefabTorreCanyonesLv1, transform.position, transform.rotation);
+        else
+            nuevaTorre = Instantiate(prefabTorreCanyonesLv2, transform.position, transform.rotation);
+
+        torreConstruida = nuevaTorre.GetComponent<Torre>();
+        tipoTorre = "TorreCanyones";
     }
 
-    public bool HayTorreContruida()
+    public void DestruyeTorre()
     {
-        return torreConstruida;
+        if (torreConstruida)
+            Destroy(torreConstruida.gameObject);
+    }
+
+    public bool HayTorreConstruida()
+    {
+        return torreConstruida != null;
+    }
+
+    public string TipoTorre()
+    {
+        return tipoTorre;
     }
 }

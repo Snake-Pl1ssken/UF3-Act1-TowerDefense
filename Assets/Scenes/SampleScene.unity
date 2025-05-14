@@ -2399,9 +2399,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   datosAguante: {fileID: 713801561}
-  resistencia: 4
+  Aguante: 4
   derrotaCanvas: {fileID: 418302508}
   victoriaCanvas: {fileID: 421395218}
+  cantidadEnemigos: 4
 --- !u!4 &1790426219
 Transform:
   m_ObjectHideFlags: 0
@@ -2635,6 +2636,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 742880300378023145, guid: e476e7c1a2259d741b282a787777942e, type: 3}
+      propertyPath: prefabProyectil
+      value: 
+      objectReference: {fileID: 1233231152535609755, guid: ad149d9777a0c264f9b377dd2e4f6702, type: 3}
     - target: {fileID: 1052975721921503366, guid: e476e7c1a2259d741b282a787777942e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2650,6 +2655,14 @@ PrefabInstance:
     - target: {fileID: 4241236122792667554, guid: e476e7c1a2259d741b282a787777942e, type: 3}
       propertyPath: vida
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241236122792667554, guid: e476e7c1a2259d741b282a787777942e, type: 3}
+      propertyPath: velocidad
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4415746932171316590, guid: e476e7c1a2259d741b282a787777942e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 7194920345565297134, guid: e476e7c1a2259d741b282a787777942e, type: 3}
       propertyPath: m_Name
@@ -2672,6 +2685,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 741309172}
     m_Modifications:
+    - target: {fileID: 861820826062438318, guid: 803767b6d3675d64fbc312e46af20cdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176887644695838872, guid: 803767b6d3675d64fbc312e46af20cdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4315328096593519907, guid: 803767b6d3675d64fbc312e46af20cdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.9
@@ -2712,6 +2733,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4715131474656692180, guid: 803767b6d3675d64fbc312e46af20cdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050703310502598563, guid: 803767b6d3675d64fbc312e46af20cdc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8414095516327633868, guid: 803767b6d3675d64fbc312e46af20cdc, type: 3}
       propertyPath: m_Name
       value: Cimiento
@@ -2737,10 +2766,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3526576091350722092, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
+      propertyPath: m_Height
+      value: 2.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526576091350722092, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
+      propertyPath: m_Radius
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526576091350722092, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
+      propertyPath: m_Center.y
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 5872139842177547449, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
       propertyPath: ruta
       value: 
       objectReference: {fileID: 1426011531}
+    - target: {fileID: 5872139842177547449, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
+      propertyPath: vida
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872139842177547449, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
+      propertyPath: velocidad
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7040534979210653609, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2781,6 +2830,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7055680916447785458, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
+      propertyPath: prefabProyectil
+      value: 
+      objectReference: {fileID: 1698436718995686133, guid: ac4eab0397e4e044280d48629d2233ea, type: 3}
     - target: {fileID: 7293867721618912669, guid: 3dd0606a4f700164a891056a08451b35, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2802,6 +2855,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1200678720147229282, guid: 697eaf09b6995ca4497b356c1ae189fd, type: 3}
+      propertyPath: radioDeteccion
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200678720147229282, guid: 697eaf09b6995ca4497b356c1ae189fd, type: 3}
+      propertyPath: prefabProyectil
+      value: 
+      objectReference: {fileID: 4722914501675891801, guid: 794a3ac797496d245ba95943cb3b7bac, type: 3}
     - target: {fileID: 1222300434554704953, guid: 697eaf09b6995ca4497b356c1ae189fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2854,9 +2915,17 @@ PrefabInstance:
       propertyPath: ruta
       value: 
       objectReference: {fileID: 1020115617}
+    - target: {fileID: 2855692475585164261, guid: 697eaf09b6995ca4497b356c1ae189fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.53
+      objectReference: {fileID: 0}
     - target: {fileID: 8736959853919180645, guid: 697eaf09b6995ca4497b356c1ae189fd, type: 3}
       propertyPath: m_Name
       value: EnemigoLento
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736959853919180645, guid: 697eaf09b6995ca4497b356c1ae189fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2924,13 +2993,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 529128887780770032, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
+      propertyPath: prefabProyectil
+      value: 
+      objectReference: {fileID: 7490210316587321502, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
     - target: {fileID: 4018072410701188539, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
       propertyPath: ruta
       value: 
       objectReference: {fileID: 1620063154}
+    - target: {fileID: 4018072410701188539, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
+      propertyPath: vida
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018072410701188539, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
+      propertyPath: velocidad
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4018072410701188539, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
+      propertyPath: vidaMaxima
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218888101764601646, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
+      propertyPath: m_Height
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218888101764601646, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
+      propertyPath: m_Radius
+      value: 1.06
+      objectReference: {fileID: 0}
     - target: {fileID: 7980826826419117559, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
       propertyPath: m_Name
       value: EnemigoBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980826826419117559, guid: 1ef2c04a614ff514fa49ed66e2e391df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -48,9 +48,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6012986827046397166, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
+      propertyPath: radioDanyoArea
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012986827046397166, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
+      propertyPath: danyoAreaEnBorde
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012986827046397166, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
+      propertyPath: tiempoMovimiento
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012986827046397166, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
+      propertyPath: danyoAreaEnOrigen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012986827046397166, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
+      propertyPath: danyoImpactoDirecto
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012986827046397166, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
+      propertyPath: radioSubProyectiles
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6012986827046397166, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
+      propertyPath: subProyectilesAGenerar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7490210316587321502, guid: bdb304bc8c5271d48807f252ae0fb4da, type: 3}
       propertyPath: m_Name
-      value: proyectilEnemigoNormal Variant Variant
+      value: proyectilEnemigoNormal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

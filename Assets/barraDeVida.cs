@@ -37,8 +37,8 @@ public class barraDeVida : MonoBehaviour
         if (percentageOfHitPoints >= 50)
             imagen.color = Color.green;
         else if (percentageOfHitPoints >= 25)
-            imagen.color = _color;
-        else
-            imagen.color = Color.red;
+            imagen.color = Color.magenta;
+        //else
+        //    imagen.color = Color.magenta;
     }
 }

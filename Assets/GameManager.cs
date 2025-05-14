@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] TMP_Text datosAguante;
-    [SerializeField] private float resistencia;
+    [SerializeField] private float Aguante;
     [SerializeField] private GameObject derrotaCanvas;
     [SerializeField] private GameObject victoriaCanvas;
 
-    private float cantidadEnemigos;
+    public float cantidadEnemigos;
     private bool ultimoEnemigoCreado = false;
 
     private void Awake()
@@ -31,13 +31,17 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        if (resistencia <= 0)
+        if (Aguante <= 0)
+        { 
             StartCoroutine(FinalPartida(false));
+        }
 
-        if (resistencia <= 0)
+        if (cantidadEnemigos <= 0 && ultimoEnemigoCreado)
+        { 
             StartCoroutine(FinalPartida(true));
+        }
 
-        datosAguante.text = $"Aguanta!: {resistencia}";
+        datosAguante.text = $"Aguanta!: {Aguante}";
 
         Debug.Log(ultimoEnemigoCreado);
     }
@@ -54,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void NotificaEnemigoLlegaAlFinal() 
     { 
-        resistencia--; 
+        Aguante--; 
     }
 
     public void NotificaUltimoEnemigoCreado() 
@@ -68,7 +72,7 @@ public class GameManager : MonoBehaviour
         {
             victoriaCanvas.SetActive(true);
         }
-        else
+        else if(!victoria)
         { 
             derrotaCanvas.SetActive(true);
         }
