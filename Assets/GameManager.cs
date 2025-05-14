@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -32,12 +33,12 @@ public class GameManager : MonoBehaviour
     {
 
         if (Aguante <= 0)
-        { 
+        {
             StartCoroutine(FinalPartida(false));
         }
 
         if (cantidadEnemigos <= 0 && ultimoEnemigoCreado)
-        { 
+        {
             StartCoroutine(FinalPartida(true));
         }
 
@@ -46,24 +47,24 @@ public class GameManager : MonoBehaviour
         Debug.Log(ultimoEnemigoCreado);
     }
 
-    public void NotificaEnemigoCreado() 
-    { 
-        cantidadEnemigos++; 
+    public void NotificaEnemigoCreado()
+    {
+        cantidadEnemigos++;
     }
 
-    public void NotificaEnemigoDestruido() 
-    { 
-        cantidadEnemigos--; 
+    public void NotificaEnemigoDestruido()
+    {
+        cantidadEnemigos--;
     }
 
-    public void NotificaEnemigoLlegaAlFinal() 
-    { 
-        Aguante--; 
+    public void NotificaEnemigoLlegaAlFinal()
+    {
+        Aguante--;
     }
 
-    public void NotificaUltimoEnemigoCreado() 
-    { 
-        ultimoEnemigoCreado = true; 
+    public void NotificaUltimoEnemigoCreado()
+    {
+        ultimoEnemigoCreado = true;
     }
 
     IEnumerator FinalPartida(bool victoria)
@@ -71,13 +72,15 @@ public class GameManager : MonoBehaviour
         if (victoria)
         {
             victoriaCanvas.SetActive(true);
+            SceneManager.LoadScene("MainMenu");
+
         }
-        else if(!victoria)
-        { 
+        else if (!victoria)
+        {
             derrotaCanvas.SetActive(true);
+            SceneManager.LoadScene("MainMenu");
         }
 
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("SampleScene");
     }
 }
